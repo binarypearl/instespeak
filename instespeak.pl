@@ -23,7 +23,10 @@ my $pid = "";
 
 my $initial_run = 1;
 
+my @weather_report_output_records = ();
+my $weather_report_record = "";
 my $weather_temperature = "";
+my $weather_windchill = "";
 my $previous_command = "";
 
 system ("clear");
@@ -99,9 +102,23 @@ while (<$cmds>) {
 
 		elsif ($command_to_execute =~ m/weather/ || $command_to_execute =~ m/whether/) {
 			if ($command_to_execute =~ m/temperature/) {
-				$weather_temperature = `weather -i KUGN -a -z il/ILZ006 -s il -c Waukegan | grep "Temperature:" | tr -s ' ' | cut -d ' ' -f3`;
-				print "The current temperature is: $weather_temperature\n";
-				`echo "The current temperature is: $weather_temperature degrees\n" | festival --tts`;
+				#$weather_temperature = `weather -i KUGN -a -z il/ILZ006 -s il -c Waukegan | grep "Temperature:" | tr -s ' ' | cut -d ' ' -f3`;
+				@weather_report_output_records = `weather -i KUGN -s il -c Waukegan -v`; 
+		
+				foreach $weather_report_record (@weather_report_output_records) {
+					chomp ($weather_report_record);
+
+					if ($weather_report_record =~ m/(^Temperature: )(.*)(F)(.*)/) {
+						$weather_temperature = $2;
+					} 
+
+					elsif ($weather_report_record =~ m/(^Windchill: )(.*)(F)(.*)/) {
+						$weather_windchill = $2;
+					}
+				}
+
+				print "The current temperature is $weather_temperature degrees and the windchill is $weather_windchill degrees\n";
+				`echo "The current temperature is $weather_temperature degrees and the windchill is $weather_windchill degrees\n" | festival --tts`;
 			}
 		}
 
