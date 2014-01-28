@@ -92,6 +92,10 @@ else {
 	}
 	
 	$text_to_speak = "The current skys are $sky_conditions with a temperature of $weather_temperature degrees and a windchill of $weather_windchill degrees.\n";
+
+	# Let's hack the minus sign to the word 'negative' as festival has trouble saying it sometimes.
+	$text_to_speak =~ s/-/negative /g;
+
 }
 
 
