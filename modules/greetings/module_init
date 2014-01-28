@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Place the name of the script or program that you would this module to run.  Make sure to include
+# the $* at the end so all arguments are passed to it.
+
+project_directory="/mnt/projects/speech/instespeak/modules/greetings"
+
+$project_directory/greetings.pl $*

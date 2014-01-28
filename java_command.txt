@@ -1,0 +1,2 @@
+foo@hybridnavi /mnt/projects/speech/instespeak/PosTagger/bin $ java -cp .:$(echo /mnt/projects/speech/apache-opennlp-1.5.3/lib/*.jar | tr ' ' ':')  PosTagger "/mnt/projects/speech/apache-opennlp-1.5.3/bin/en-pos-maxent.bin" "This is a computer."
+

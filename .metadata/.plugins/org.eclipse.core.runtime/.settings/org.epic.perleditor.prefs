@@ -1,0 +1,6 @@
+ENABLE_DEBUG_CONSOLE=0
+SHOW_WARNINGS=0
+SYNTAX_VALIDATION_PREFERENCE=0
+USE_TAINT_MODE=0
+eclipse.preferences.version=1
+lineNumberRuler=true

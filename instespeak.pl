@@ -36,7 +36,8 @@ my $previous_command = "";
 my @opennlp_output = "";
 my $opennlp_record = "";
 
-my $project_dir = "/mnt/projects/speech/apache-opennlp-1.5.3/";
+#my $project_dir = "/mnt/projects/speech/apache-opennlp-1.5.3/";
+my $project_dir = "/mnt/projects/speech/instespeak";
 
 my $socket = "";
 my $pos_tagged_output = "";
@@ -48,7 +49,25 @@ my $text = "";
 my $part_of_speech = "";
 
 my $dbfile = "/mnt/projects/speech/instespeak/instespeak.db";
+my $database_handle = DBI->connect ("dbi:SQLite:dbname=$dbfile", "", "");
 
+my $sql_query = "";
+my $sql_query_prepare = "";
+my $sql_query_return_value = "";
+
+my @noun_row_select_results = ();
+my $noun_row_select_result = "";
+
+my $module_to_run = "";
+my $module_arguments = "";
+
+my $module_output_to_speak = "";
+
+my @interjection_results = ();
+my $interjection_to_respond_to = "";
+
+my @verb_result_string = "";
+my $verb_processor_output = "";
 
 system ("clear");
 
@@ -120,9 +139,89 @@ while (<$cmds>) {
 				$text = $1;
 				$part_of_speech = $3;
 				
-				if ($part_of_speech eq "NN") {
-					#
+				# If part of speech is "Noun, singular or mass", or "Noun, plural":
+				if ($part_of_speech eq "NN" || $part_of_speech eq "NNS") {
+					$sql_query = qq (select * from nouns_and_actions where noun="$text";);
+					$sql_query_prepare = $database_handle->prepare ($sql_query);
+					$sql_query_return_value = $sql_query_prepare->execute();
 					
+					if ($sql_query_return_value < 0) {
+						print "Error with sql statement: $DBI::errstr";
+					}
+					
+					@noun_row_select_results = $sql_query_prepare->fetchrow_array();
+					
+					$module_to_run = @noun_row_select_results[1];
+					$module_arguments = @noun_row_select_results[2];
+					
+					if ($module_to_run eq "") {
+						print "I didn't find a match for this noun: $text\n";
+					}
+					
+					else {
+						print "I am going to run this module: $module_to_run with these arguments: $module_arguments -m $command_to_execute\n";
+						
+						# um
+						$module_output_to_speak = `$project_dir/modules/$module_to_run/module_init $module_arguments -m $command_to_execute`;
+						chomp ($module_output_to_speak);
+						
+						print "$module_output_to_speak\n";
+						
+						`echo $module_output_to_speak | festival --tts`;
+					}				
+				}
+				
+				# This is UH, or Interjection:
+				elsif ($part_of_speech eq "UH") {
+					$sql_query = qq (select * from interjections where word="$text";);
+					$sql_query_prepare = $database_handle->prepare ($sql_query);
+					$sql_query_return_value = $sql_query_prepare->execute();
+					
+					if ($sql_query_return_value < 0) {
+						print "Error with Interjection sql statement: $DBI::errstr";
+					}
+					
+					@interjection_results = $sql_query_prepare->fetchrow_array();
+					
+					$interjection_to_respond_to = @interjection_results[0];
+					$module_to_run = @interjection_results[1];
+					
+					if ($interjection_to_respond_to eq "") {
+						print "I didn't find a match for this interjection: $text\n";
+					}
+					
+					else {
+						print "I am going to run this module: $module_to_run with these arguments: $module_arguments -m $command_to_execute\n";
+						
+						# um
+						$module_output_to_speak = `$project_dir/modules/$module_to_run/module_init $module_arguments -m $interjection_to_respond_to`;
+						chomp ($module_output_to_speak);
+						
+						print "$module_output_to_speak\n";
+						
+						`echo $module_output_to_speak | festival --tts`;
+					}					
+				}
+				
+				# This is VB, or a verb:
+				elsif ($part_of_speech eq "VB") {
+					$sql_query = qq (select * from verbs where word="$text";);
+					$sql_query_prepare = $database_handle->prepare ($sql_query);
+					$sql_query_return_value = $sql_query_prepare->execute();
+					
+					if ($sql_query_return_value < 0) {
+						print "Error with verb sql statement: $DBI::errstr";
+					}
+					
+					@verb_result_string = $sql_query_prepare->fetchrow_array();
+					
+					print "Sending string to verb processor\n";
+					$verb_processor_output = `$project_dir/verb_processor.pl -s "@verb_result_string"`;
+					
+					chomp ($verb_processor_output);
+					
+					print "Result from verb processor: ***$verb_processor_output***\n";
+					`echo $verb_processor_output | festival --tts`;
 				}
 			}
 		}
@@ -130,10 +229,6 @@ while (<$cmds>) {
 		close ($socket);
 
 		#*** End new database code here.
-
-		if ($command_to_execute =~ m/^computer$/) {
-			`echo "What can I do for you?" | festival --tts`;
-		}
 
 		if ($command_to_execute =~ m/computer/) {
 			if ($command_to_execute =~ m/new/) {
@@ -166,28 +261,6 @@ while (<$cmds>) {
 				}
 			}
 
-		}
-
-		elsif ($command_to_execute =~ m/weather/ || $command_to_execute =~ m/whether/) {
-			if ($command_to_execute =~ m/temperature/) {
-				#$weather_temperature = `weather -i KUGN -a -z il/ILZ006 -s il -c Waukegan | grep "Temperature:" | tr -s ' ' | cut -d ' ' -f3`;
-				@weather_report_output_records = `weather -i KUGN -s il -c Waukegan -v`; 
-		
-				foreach $weather_report_record (@weather_report_output_records) {
-					chomp ($weather_report_record);
-
-					if ($weather_report_record =~ m/(^Temperature: )(.*)( F)(.*)/) {
-						$weather_temperature = $2;
-					} 
-
-					elsif ($weather_report_record =~ m/(^Windchill: )(.*)( F)(.*)/) {
-						$weather_windchill = $2;
-					}
-				}
-
-				print "The current temperature is $weather_temperature degrees and the windchill is $weather_windchill degrees\n";
-				`echo "The current temperature is $weather_temperature degrees and the windchill is $weather_windchill degrees\n" | festival --tts`;
-			}
 		}
 
 		elsif ($command_to_execute =~ m/previous command/) {

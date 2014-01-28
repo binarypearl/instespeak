@@ -53,8 +53,6 @@ public class PosTagger {
 						
 						Matcher matcher_object = pattern_message_from_socket.matcher(string_message_from_socket);
 						
-						System.out.println ("did we get here?");
-						
 						if (matcher_object.find()) {
 							//System.out.println ("We got the match.");
 							//System.out.println ("First arg: " + matcher_object.group(1));

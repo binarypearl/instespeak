@@ -1,0 +1,52 @@
+So lets say we get phrases like this:
+
+What is the temperature?
+
+computer please open a new terminal
+
+Are there any severe weather alerts?
+
+
+So first thing we have is question words:
+what_WP is_VBZ the_DT temperature?_NN
+
+What -> WP -> Whpronoun
+is -> VBZ -> Verb, 3rd person singular present
+the -> DT -> Determiner
+temperature -> NN -> Noun, singular or mass
+
+
+so in this case, 'What' means we need to determine something.  This code stays in the program.
+'is' I think in this case is superfluous.  As we could easily also say "What the temperature?" and the meaning still comes across.
+'the' here is subtle.  'the' is asking for a particular temperature.  If we said 'What is a temperature?' we could be asking 1 of 2 
+different things.  The most likely would be in the case of someone being sick.  Think of a child going "What is a temperature?" when
+a parent or doctor says "you have a temperature", as in you have a fever.  The other possibility is that we just want any temperature
+vaule, but not anyone in particular.  This isn't so much relavent here, but it makes a big different in something like 'I'm going to a store' vs
+I'm going to the store.
+
+So in this case, I think we can safely use just the question word 'What' and the noun 'temperature'.
+
+So the 'What' question means we should query the database for a noun 'temperature'.  If we find that, that will point us to a
+"module", which is another script/program that performs the weather lookup and sends back the output.
+
+-------
+ok so what about "computer please open a new terminal".
+computer_NN please_VB open_VB a_DT new_JJ terminal_NN
+
+'computer' here referes specifically to this computer.  While not necessary in this case with only one listening program,
+if we have multiple listening computers in the same room with different purposes, we could use this to differenicate between them.
+'please' here is verb, but it's not asking to something specifically, but asking to do whatever politely.  In our case,
+we could speak about a more polite response.  Beyond that it's not really necessary at this point.  In furuture architectures,
+we could change what we want to do (or not do) by detecting this verb.
+'open' is what we are trying to do.  So we need to open something.  And that something is a 'terminal', which is a noun.
+'a' the determiner, indicates we don't want a specific something, just any new terminal will be fine.
+'new' is an adjective.  In this case, we don't really open an old terminal (unless we translate this as bring it up on the screen...maybe).
+
+So in this case, we query a list of verbs in the database for 'open'.  That will take us to a new table of things that we can open.
+From there we query the new table for nouns, in this case 'terminal'.  'terminal' then points to another module, which will open the new terminal.
+
+-----
+Are there any severe weather alerts?
+Are_VBP there_RB any_DT severe_JJ weather_NN alerts?_NN 
+
+'Are' is a verb, meaning we want some information.  This one is more confusing, as we have 2 related nouns.  I'll think about this one later.
