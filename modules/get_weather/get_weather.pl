@@ -4,6 +4,8 @@ use strict;
 
 use Getopt::Long;
 
+# Just a comment
+
 my @weather_report_output_records = ();
 my $weather_report_record = "";
 my $weather_temperature = "";
