@@ -162,6 +162,8 @@ while (<$cmds>) {
 						print "I am going to run this module: $module_to_run with these arguments: $module_arguments -m $command_to_execute\n";
 						
 						# um
+						$command_to_execute =~ s/ /%20/g;
+						
 						$module_output_to_speak = `$project_dir/modules/$module_to_run/module_init $module_arguments -m $command_to_execute`;
 						chomp ($module_output_to_speak);
 						
@@ -229,46 +231,6 @@ while (<$cmds>) {
 		close ($socket);
 
 		#*** End new database code here.
-
-		if ($command_to_execute =~ m/computer/) {
-			if ($command_to_execute =~ m/new/) {
-				if ($command_to_execute =~ m/term/) {
-					`/usr/bin/gnome-terminal`;	
-					`echo "$command_to_execute launched" | festival --tts`;
-				}
-
-				elsif ($command_to_execute =~ m/internet/) {
-					$pid = fork();
-
-					if ($pid == 0) {
-						`/usr/bin/google-chrome &`;	
-						`echo "$command_to_execute launched" | festival --tts`;
-					}
-				}
-			}
-
-			elsif ($command_to_execute =~ m/close/) {
-				# Sphinx often thinks 'with no' is 'window', allowing for both
-				if ($command_to_execute =~ m/window/ || $command_to_execute =~ m/with no/) {
-					$screen = Gnome2::Wnck::Screen -> get_default();
-					$screen -> force_update();
-					$active_window = $screen->get_active_window();
-					
-					print "AW: " . $active_window->get_name() . "\n";
-	
-					$active_window->close($active_window);
-					`echo "Closing window." | festival --tts`;
-				}
-			}
-
-		}
-
-		elsif ($command_to_execute =~ m/previous command/) {
-			print "The previous command was: ***$previous_command***\n";
-			`echo "$previous_command" | festival --tts`;
-		}
-
-		$previous_command = $command_to_execute;
 	}
 }
 
