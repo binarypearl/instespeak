@@ -1,5 +1,10 @@
 #!/usr/bin/perl
 
+# get_weather.pl - Module to find the weather and report it.
+#
+# This module is dependent upon the external command `weather` from the weather-util package...at 
+# least that's what it is called on ubuntu based systems.
+
 use strict;
 
 use Getopt::Long;
@@ -13,7 +18,7 @@ my $weather_temperature = "";
 my $weather_windchill = "";
 
 my $version_flag = "";
-my $version = "0.01";
+my $version = "0.02";
 
 my $temperature_flag = "";
 
@@ -37,10 +42,6 @@ if ($version_flag) {
 	print "Version is: $version\n";
 }
 
-#if ($temperature_flag) {
-#	print "Temperature flag here also\n";
-#}
-
 @weather_report_output_records = `weather -i KUGN -s il -c Waukegan -v`;				
 
 # If just temperature is requested, lets say the temperature and the windchill
@@ -58,6 +59,9 @@ if ($temperature_flag) {
 	}
 	
 	$text_to_speak = "The current temperature is $weather_temperature degrees and the windchill is $weather_windchill degrees\n";
+	
+	# Let's hack the minus sign to the word 'negative' as festival has trouble saying it sometimes.
+	$text_to_speak =~ s/-/negative /g;
 }
 
 # If we want just general weather, lets parse out some of the more interesting facts from noaa:
