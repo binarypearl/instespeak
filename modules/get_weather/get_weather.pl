@@ -5,8 +5,7 @@ use strict;
 use Getopt::Long;
 
 # Just a comment
-# C2
-# C3
+# C2...
 
 my @weather_report_output_records = ();
 my $weather_report_record = "";
