@@ -36,8 +36,62 @@ my $previous_command = "";
 my @opennlp_output = "";
 my $opennlp_record = "";
 
-#my $project_dir = "/mnt/projects/speech/apache-opennlp-1.5.3/";
-my $project_dir = "/mnt/projects/speech/instespeak";
+my @config_file_records = ();
+my $config_file_record = "";
+
+my $log_level = "";
+my $project_dir = "";
+ 
+my $date_and_time = `date`;
+chomp ($date_and_time); 
+ 
+my $version = "0.01"; 
+ 
+system ("clear");
+ 
+open (CFGFILE, "/etc/instespeak.cfg");
+
+@config_file_records = <CFGFILE>;
+
+close (CFGFILE);
+
+foreach $config_file_record (@config_file_records) {
+	chomp ($config_file_record);
+	
+	if ($config_file_record =~ m/(log_level)(\s*)(=)(\s*)(.*)/) {
+		$log_level = $5;
+		
+		$log_level =~ s/\"//g;
+	}
+	
+	elsif ($config_file_record =~ m/(project_directory)(\s*)(=)(\s*)(.*)/) {
+		$project_dir = $5;
+		
+		$project_dir =~ s/\"//g;	
+	}
+}
+
+# Capture ctrl-c
+$SIG{INT} = \&exit_program;
+
+# log file here:
+open (STDOUT, "| tee -a $project_dir/logs/instespeak.log");
+
+if ($log_level >= 1) {
+	print "---------"x10 . "\n";
+	print "Welcome to instespeak version $version!\n\n";
+	print "Date and time: $date_and_time\n";
+}
+
+if ($log_level >= 5) {
+	print "The current log level is: $log_level\n";
+	print "The current project directory is: $project_dir\n";
+}
+
+if ($log_level >= 1) {
+	print "---------"x10 . "\n";
+}
+
 
 my $socket = "";
 my $pos_tagged_output = "";
@@ -69,10 +123,11 @@ my $interjection_to_respond_to = "";
 my @verb_result_string = "";
 my $verb_processor_output = "";
 
-system ("clear");
-
 if ($initial_run) {
-	print "Initializing: please wait...\n";
+	if ($log_level >= 1) {
+		print "Initializing: please wait...\n";
+	}
+	
 	`echo "Initializing: please wait" | festival --tts`;
 }
 
@@ -86,7 +141,10 @@ open ($cmds, "-|", "/usr/local/bin/pocketsphinx_continuous 2> /dev/null");
 # 9 digit number, on colum one.  From there we parse through the text.
 while (<$cmds>) {
 	if ($initial_run) {
-		print "Initialization complete.\n";
+		if ($log_level >= 1) {
+			print "Initialization complete.  I am ready for commands.\n\n";
+		}
+		
 		`echo "Initialization complete.  I am ready for commands." | festival --tts`;
 
 		$initial_run = 0;
@@ -99,19 +157,14 @@ while (<$cmds>) {
 
 		$command_to_execute =~ s/whether/weather/;
 
-		print "***The command that I got was: $command_to_execute***\n";
-		#`echo "$command_to_execute" | festival --tts`;
+		if ($log_level >= 1) {
+			print "---------"x10 . "\n";
+			print "Phrase detected from microphone...\n";
+		}
 
-		#*** New database code here:
-
-		# So first, we need to pass the text to OpenNLP, so we tag the words with the different parts of speech.
-		#@opennlp_output = `echo $command_to_execute | $project_dir/bin/opennlp POSTagger $project_dir/bin/en-pos-maxent.bin`;
-
-		#foreach $opennlp_record (@opennlp_output) {
-		#	chomp ($opennlp_record);
-                # 
-		#	print $opennlp_record . "\n";
-		#}
+		if ($log_level >= 5) {
+			print "Speech to text received from Pocket Sphinx: $command_to_execute\n";
+		}
 
 		# Lets connect to the java socket for opennlp:
 		$socket = IO::Socket::INET->new (
@@ -234,5 +287,10 @@ while (<$cmds>) {
 	}
 }
 
-close $cmds;
+sub exit_program {
+	close ($cmds);
+	close (STDOUT);
 
+	
+	`echo "Goodbye" | festival --tts`;
+}
