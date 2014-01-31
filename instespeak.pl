@@ -78,7 +78,7 @@ $SIG{INT} = \&exit_program;
 open (STDOUT, "| tee -a $project_dir/logs/instespeak.log");
 
 if ($log_level >= 1) {
-	print "---------"x10 . "\n";
+	print "=========="x10 . "\n";
 	print "Welcome to instespeak version $version!\n\n";
 	print "Date and time: $date_and_time\n";
 }
@@ -89,7 +89,7 @@ if ($log_level >= 5) {
 }
 
 if ($log_level >= 1) {
-	print "---------"x10 . "\n";
+	print "=========="x10 . "\n\n";
 }
 
 
@@ -123,8 +123,11 @@ my $interjection_to_respond_to = "";
 my @verb_result_string = "";
 my $verb_processor_output = "";
 
+my $did_i_say_something_flag = 0;
+
 if ($initial_run) {
 	if ($log_level >= 1) {
+		print "----------"x10 . "\n";
 		print "Initializing: please wait...\n";
 	}
 	
@@ -142,7 +145,8 @@ open ($cmds, "-|", "/usr/local/bin/pocketsphinx_continuous 2> /dev/null");
 while (<$cmds>) {
 	if ($initial_run) {
 		if ($log_level >= 1) {
-			print "Initialization complete.  I am ready for commands.\n\n";
+			print "Initialization complete.  I am ready for commands.\n";
+			print "----------"x10 . "\n\n";
 		}
 		
 		`echo "Initialization complete.  I am ready for commands." | festival --tts`;
@@ -158,12 +162,12 @@ while (<$cmds>) {
 		$command_to_execute =~ s/whether/weather/;
 
 		if ($log_level >= 1) {
-			print "---------"x10 . "\n";
-			print "Phrase detected from microphone...\n";
+			print "----------"x10 . "\n";
+			print "Phrase detected: ";
 		}
 
-		if ($log_level >= 5) {
-			print "Speech to text received from Pocket Sphinx: $command_to_execute\n";
+		if ($log_level >= 1) {
+			print "$command_to_execute\n";
 		}
 
 		# Lets connect to the java socket for opennlp:
@@ -178,9 +182,15 @@ while (<$cmds>) {
 		# Otherwise in.readLine() was hanging waiting for it.
 		print $socket "text:$command_to_execute\n\r";
 
+		if ($log_level >= 5) {
+			print "Sending \"text:$command_to_execute\" to PosTagger.\n";
+		}
+
 		$pos_tagged_output = <$socket>;
 
-		print "Here is the replay back: $pos_tagged_output";
+		if ($log_level >= 5) {
+			print "Reply from PosTagger: $pos_tagged_output";
+		}
 		
 		# Ok, so now that we got the PosTagged version of our voice command, now we need to parse through it.
 		@pos_tags = split (' ', $pos_tagged_output);
@@ -199,7 +209,9 @@ while (<$cmds>) {
 					$sql_query_return_value = $sql_query_prepare->execute();
 					
 					if ($sql_query_return_value < 0) {
-						print "Error with sql statement: $DBI::errstr";
+						if ($log_level >= 5) {
+							print "Error with sql statement: $DBI::errstr";
+						}
 					}
 					
 					@noun_row_select_results = $sql_query_prepare->fetchrow_array();
@@ -208,11 +220,15 @@ while (<$cmds>) {
 					$module_arguments = @noun_row_select_results[2];
 					
 					if ($module_to_run eq "") {
-						print "I didn't find a match for this noun: $text\n";
+						if ($log_level >= 5) {
+							print "I didn't find a match for this noun: $text\n";
+						}
 					}
 					
 					else {
-						print "I am going to run this module: $module_to_run with these arguments: $module_arguments -m $command_to_execute\n";
+						if ($log_level >= 5) {
+							print "Instespeak is going to run this module: \"$module_to_run\" with these arguments: \"$module_arguments -m $command_to_execute\"\n";
+						}
 						
 						# um
 						$command_to_execute =~ s/ /%20/g;
@@ -220,9 +236,12 @@ while (<$cmds>) {
 						$module_output_to_speak = `$project_dir/modules/$module_to_run/module_init $module_arguments -m $command_to_execute`;
 						chomp ($module_output_to_speak);
 						
-						print "$module_output_to_speak\n";
+						if ($log_level >= 1) {
+							print "Instespeak says: $module_output_to_speak\n";
+						}
 						
 						`echo $module_output_to_speak | festival --tts`;
+						$did_i_say_something_flag = 1;
 					}				
 				}
 				
@@ -233,7 +252,9 @@ while (<$cmds>) {
 					$sql_query_return_value = $sql_query_prepare->execute();
 					
 					if ($sql_query_return_value < 0) {
-						print "Error with Interjection sql statement: $DBI::errstr";
+						if ($log_level >= 1) {
+							print "Error with Interjection sql statement: $DBI::errstr";
+						}
 					}
 					
 					@interjection_results = $sql_query_prepare->fetchrow_array();
@@ -242,19 +263,26 @@ while (<$cmds>) {
 					$module_to_run = @interjection_results[1];
 					
 					if ($interjection_to_respond_to eq "") {
-						print "I didn't find a match for this interjection: $text\n";
+						if ($log_level >= 5) {
+							print "I didn't find a match for this interjection: $text\n";
+						}
 					}
 					
 					else {
-						print "I am going to run this module: $module_to_run with these arguments: $module_arguments -m $command_to_execute\n";
+						if ($log_level >= 5) {
+							print "I am going to run this module: $module_to_run with these arguments: $module_arguments -m $command_to_execute\n";
+						}
 						
 						# um
 						$module_output_to_speak = `$project_dir/modules/$module_to_run/module_init $module_arguments -m $interjection_to_respond_to`;
 						chomp ($module_output_to_speak);
 						
-						print "$module_output_to_speak\n";
+						if ($log_level >= 1) {
+							print "Instespeak says: $module_output_to_speak\n";
+						}
 						
 						`echo $module_output_to_speak | festival --tts`;
+						$did_i_say_something_flag = 1;
 					}					
 				}
 				
@@ -265,32 +293,56 @@ while (<$cmds>) {
 					$sql_query_return_value = $sql_query_prepare->execute();
 					
 					if ($sql_query_return_value < 0) {
-						print "Error with verb sql statement: $DBI::errstr";
+						if ($log_level >= 1) {
+							print "Error with verb sql statement: $DBI::errstr";
+						}
 					}
 					
 					@verb_result_string = $sql_query_prepare->fetchrow_array();
 					
-					print "Sending string to verb processor\n";
+					if ($log_level >= 5) {
+						print "Sending string to verb processor\n";
+					}
+					
 					$verb_processor_output = `$project_dir/verb_processor.pl -s "@verb_result_string"`;
 					
 					chomp ($verb_processor_output);
 					
-					print "Result from verb processor: ***$verb_processor_output***\n";
+					if ($log_level >= 1) {
+						print "Instespeak says: $verb_processor_output\n";
+					}
+					
 					`echo $verb_processor_output | festival --tts`;
-				}
+					$did_i_say_something_flag = 1;
+				}	# end elsif			
+			}	# end if for POS tag
+		}	# end foreach
+		
+		if (! $did_i_say_something_flag) {
+			if ($log_level >= 1) {
+				print "Instespeak says: Sorry I have nothing to say.\n";
 			}
 		}
 
 		close ($socket);
+
+		if ($log_level >= 1) {
+				print "----------"x10 . "\n\n";
+		}
+
+		$did_i_say_something_flag = 0;
 
 		#*** End new database code here.
 	}
 }
 
 sub exit_program {
+	if ($log_level >= 1) {
+		print "Goodbye\n";	
+	}
+
 	close ($cmds);
 	close (STDOUT);
 
-	
 	`echo "Goodbye" | festival --tts`;
 }
