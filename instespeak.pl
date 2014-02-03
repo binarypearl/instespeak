@@ -17,6 +17,7 @@ use DBI;
 use IO::Socket;
 
 my $cmds;
+my $opennlp_server;
 
 my $command_to_execute = "";
 
@@ -125,6 +126,13 @@ my $verb_processor_output = "";
 
 my $did_i_say_something_flag = 0;
 
+my $opennlp_service_down = 1;
+my $opennlp_service_timeout_counter = 0;
+
+my $output = "";
+
+my $opennlp_testing_message = "";
+
 if ($initial_run) {
 	if ($log_level >= 1) {
 		print "----------"x10 . "\n";
@@ -140,15 +148,70 @@ if ($initial_run) {
 # fail to start.
 open ($cmds, "-|", "/usr/local/bin/pocketsphinx_continuous 2> /dev/null");
 
+
+# Now let's start the opennlp java server:
+open ($opennlp_server, "-|", "cd /mnt/projects/speech/instespeak/PosTagger/bin; java -cp .:\$(echo /mnt/projects/speech/apache-opennlp-1.5.3/lib/*.jar | tr ' ' ':')  PosTagger \"/mnt/projects/speech/apache-opennlp-1.5.3/bin/en-pos-maxent.bin\" 2>&1 /dev/null");
+#open ($opennlp_server, "-|", "cd /mnt/projects/speech/instespeak/PosTagger/bin; java -cp .:\$(echo /mnt/projects/speech/apache-opennlp-1.5.3/lib/*.jar | tr ' ' ':')  PosTagger \"/mnt/projects/speech/apache-opennlp-1.5.3/bin/en-pos-maxent.bin\"");
+
 # As we loop through the output, there is a specific line for each interrupted text, and it starts with a 
 # 9 digit number, on colum one.  From there we parse through the text.
 while (<$cmds>) {
 	if ($initial_run) {
+		
+		while ($opennlp_service_down) {
+			#print "D1: opennlp_service_down: ***$opennlp_service_down***\n";
+			
+			# Let's check to see if port 9999 is up yet:
+			# Eventually need to check this better, as 19999 could match as well..etc.
+			
+			# Lets connect to the java socket for opennlp:
+			#$socket = IO::Socket::INET->new (
+			#	PeerAddr => 'localhost',
+			#	PeerPort => '9999',
+			#	Proto	=> 'tcp',
+			#	Type	=> SOCK_STREAM
+			#	) or print "Socket not up yet\n";
+	
+			#if ($socket) {	
+				#print $socket "testing:are you there?\n\r";
+				#$opennlp_testing_message = <$socket>;
+				#$opennlp_testing_message = "yes I am";
+			
+				#if ($opennlp_testing_message =~ m/yes I am/) {
+					
+			`netstat -taun | grep 9999`;
+			
+			if (($? >> 8) == 0) {
+				$opennlp_service_down = 0;
+				
+				#print "D2: opennlp_service_down: ***$opennlp_service_down***\n";	
+			}
+			
+			else {
+				$opennlp_service_timeout_counter++;
+				sleep 1;
+				
+				if ($opennlp_service_timeout_counter >= 20) {
+					exit_program ("error_starting_opennlp");
+				}
+				
+				#print "D3: opennlp_service_down: ***$opennlp_service_down***\n";
+				#print "D4: output: ***$output***\n";
+			}
+			#}
+			
+			#else {
+			#	sleep 1;
+			#}
+		}
+		
 		if ($log_level >= 1) {
 			print "Initialization complete.  I am ready for commands.\n";
 			print "----------"x10 . "\n\n";
 		}
 		
+		# Let's make sure the PosTagger service is running.  Otherwise let's exit, 
+		# because we aint do anything else if it's not.
 		`echo "Initialization complete.  I am ready for commands." | festival --tts`;
 
 		$initial_run = 0;
@@ -172,17 +235,17 @@ while (<$cmds>) {
 
 		# Lets connect to the java socket for opennlp:
 		$socket = IO::Socket::INET->new (
-						PeerAddr => 'localhost',
-						PeerPort => '9999',
-						Proto	=> 'tcp',
-						Type	=> SOCK_STREAM
-						) or print "oops\n";
+			PeerAddr => 'localhost',
+			PeerPort => '9999',
+			Proto	=> 'tcp',
+			Type	=> SOCK_STREAM
+			) or print "Socket not up yet\n";
 
 		# Apparently java wasn't happy with the \n, it wanted the \r to indicate it was the end of the message.
 		# Otherwise in.readLine() was hanging waiting for it.
 		print $socket "text:$command_to_execute\n\r";
 
-		if ($log_level >= 5) {
+		if ($log_level >= 5) {		
 			print "Sending \"text:$command_to_execute\" to PosTagger.\n";
 		}
 
@@ -338,11 +401,21 @@ while (<$cmds>) {
 
 sub exit_program {
 	if ($log_level >= 1) {
-		print "Goodbye\n";	
+		print "Goodbye (press ctrl-c if hanging)\n";	
 	}
 
 	close ($cmds);
 	close (STDOUT);
 
-	`echo "Goodbye" | festival --tts`;
+	if ($_[0] eq "error_starting_opennlp") {
+		`echo "Sorry I could not start open n l p" | festival --tts`;
+		
+		exit 1;	
+		exit 1;
+	}
+	
+	else {
+		`echo "Goodbye" | festival --tts`;	
+		exit 0;
+	}
 }

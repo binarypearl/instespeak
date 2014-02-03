@@ -94,10 +94,15 @@ public class PosTagger {
 			file_writer_log_file.flush();
 			
 			try {
+				file_writer_log_file.write("stage 0\n");
+				
 				while (true) {
 					Socket socket = server_socket.accept();
 					
+					file_writer_log_file.write ("stage 1\n");
+					
 					try {
+						file_writer_log_file.write ("stage 2\n");
 						// This is how we send data back over to the client.
 						// out.println("message") 
 						PrintWriter out = new PrintWriter (socket.getOutputStream(), true);
@@ -113,16 +118,26 @@ public class PosTagger {
 						file_writer_log_file.write ("----------------------------------------------------------------------------------------------------\n");
 						file_writer_log_file.write ("Message from instespeak.pl: " + string_message_from_socket + "\n");
 						
+						/*
+						String string_regex_message_from_socket_testing = "(testing)(:)(.*)";
+						Pattern pattern_message_from_socket_testing = Pattern.compile(string_regex_message_from_socket_testing, Pattern.CASE_INSENSITIVE);
+						
+						Matcher matcher_object_testing = pattern_message_from_socket_testing.matcher(string_message_from_socket);
+						
+						if (matcher_object_testing.find()) {
+							out.println ("yes I am\n");
+						}
+						*/
 						String string_regex_message_from_socket = "(text)(:)(.*)";
 						Pattern pattern_message_from_socket = Pattern.compile(string_regex_message_from_socket, Pattern.CASE_INSENSITIVE);
 						
 						Matcher matcher_object = pattern_message_from_socket.matcher(string_message_from_socket);
 						
 						if (matcher_object.find()) {
-							//System.out.println ("We got the match.");
-							//System.out.println ("First arg: " + matcher_object.group(1));
-							//System.out.println ("Secon arg: " + matcher_object.group(2));
-							//System.out.println ("Third arg: " + matcher_object.group(3));
+							System.out.println ("We got the match.");
+							System.out.println ("First arg: " + matcher_object.group(1));
+							System.out.println ("Secon arg: " + matcher_object.group(2));
+							System.out.println ("Third arg: " + matcher_object.group(3));
 
 							String command = matcher_object.group(1);
 							String arguments = matcher_object.group(3);
@@ -147,9 +162,15 @@ public class PosTagger {
 						
 						else {
 							//System.out.println ("sorry no match.");
-							file_writer_log_file.write ("Sorry no match.");
+							file_writer_log_file.write ("Sorry no match.\n");
 						}
 					}
+					
+					catch (IOException ioe) {
+						file_writer_log_file.write ("nmap scan1?\n");
+						System.out.println ("nmap scan1?\n");
+					}	
+					
 					
 					finally {
 							socket.close();
@@ -158,6 +179,11 @@ public class PosTagger {
 					file_writer_log_file.write ("----------------------------------------------------------------------------------------------------\n\n");
 					file_writer_log_file.flush();
 				}
+			}
+			
+			catch (IOException ioe) {
+				file_writer_log_file.write ("nmap scan2?\n");
+				System.out.println ("nmap scan2?\n");
 			}
 		
 			finally {

@@ -5,6 +5,11 @@
 # This module is dependent upon the external command `weather` from the weather-util package...at 
 # least that's what it is called on ubuntu based systems.
 
+# BUGS
+# 1. If windchill is 0, there is no output of Windchill.  In that case let's just say windchill is the same
+#    as the current temperature
+
+
 use strict;
 
 use Getopt::Long;
