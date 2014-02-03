@@ -5,11 +5,6 @@
 # This module is dependent upon the external command `weather` from the weather-util package...at 
 # least that's what it is called on ubuntu based systems.
 
-# BUGS
-# 1. If windchill is 0, there is no output of Windchill.  In that case let's just say windchill is the same
-#    as the current temperature
-
-
 use strict;
 
 use Getopt::Long;
@@ -63,7 +58,15 @@ if ($temperature_flag) {
 		}
 	}
 	
-	$text_to_speak = "The current temperature is $weather_temperature degrees and the windchill is $weather_windchill degrees\n";
+	# Now let's get rid of the decimal:
+	$weather_temperature = int ($weather_temperature);
+	
+	# The windchill may not be present if it's the same as the temperature, lets fix this:
+	if (! $weather_windchill) {
+		$weather_windchill = $weather_temperature;
+	}
+	
+	$text_to_speak = "The current temperature is $weather_temperature degrees and the windchill is $weather_windchill degrees.\n";
 	
 	# Let's hack the minus sign to the word 'negative' as festival has trouble saying it sometimes.
 	$text_to_speak =~ s/-/negative /g;
