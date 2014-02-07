@@ -121,6 +121,10 @@ my $module_output_to_speak = "";
 my @interjection_results = ();
 my $interjection_to_respond_to = "";
 
+my @wrb_results = ();
+my $wrb_next_pos = "";
+my $wrb_processor = "";
+
 my @verb_result_string = "";
 my $verb_processor_output = "";
 
@@ -377,7 +381,41 @@ while (<$cmds>) {
 					
 					`echo $verb_processor_output | festival --tts`;
 					$did_i_say_something_flag = 1;
-				}	# end elsif			
+				}	# end elsif	
+
+				# This is WRB, or a question word:
+				elsif ($part_of_speech eq "WRB") {
+					$sql_query = qq (select * from question_words where word="$text";);
+					$sql_query_prepare = $database_handle->prepare ($sql_query);
+					$sql_query_return_value = $sql_query_prepare->execute();
+					
+					if ($sql_query_return_value < 0) {
+						if ($log_level >= 1) {
+							print "Error with WRB sql statement: $DBI::errstr";
+						}
+					}
+					
+					# continue on here...
+					@wrb_results = $sql_query_prepare->fetchrow_array();
+					
+					$wrb_next_pos = @wrb_results[1];
+					$wrb_processor = @wrb_results[2];							
+					
+					if ($wrb_next_pos =~ m/VBP/) {
+						$verb_processor_output = `$project_dir/verb_processor.pl -s "$command_to_execute"`;
+						chomp ($verb_processor_output);
+					
+						#print "what is: ***$verb_processor_output***\n";
+					
+						if ($log_level >= 1) {
+							print "Instespeak says: $verb_processor_output\n";
+						}
+					
+						`echo "$verb_processor_output" | festival --tts`;
+						$did_i_say_something_flag = 1;
+					}
+				} # end elsif
+	
 			}	# end if for POS tag
 		}	# end foreach
 		

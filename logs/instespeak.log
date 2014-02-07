@@ -7852,3 +7852,1185 @@ Phrase detected: thank you
 Instespeak says: your welcome
 ----------------------------------------------------------------------------------------------------
 
+====================================================================================================
+Welcome to instespeak version 0.01!
+
+Date and time: Sun Feb  2 20:33:33 CST 2014
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+Initializing: please wait...
+Initialization complete.  I am ready for commands.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+Welcome to instespeak version 0.01!
+
+Date and time: Wed Feb  5 00:54:38 CST 2014
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+Initializing: please wait...
+Initialization complete.  I am ready for commands.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: the air
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: computer
+Instespeak says: What can I do for you?
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: we
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: temperature
+Instespeak says: The current temperature is 23 degrees and the windchill is 12 degrees.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+Welcome to instespeak version 0.01!
+
+Date and time: Thu Feb  6 21:55:02 CST 2014
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+Initializing: please wait...
+Initialization complete.  I am ready for commands.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: come here
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: computer
+Instespeak says: What can I do for you?
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+W1: VBP
+W2: verb_processor
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: thank you
+Instespeak says: your welcome
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: the old you
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: temperature
+Instespeak says: The current temperature is negative 2 degrees and the windchill is negative 14 degrees.
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+Welcome to instespeak version 0.01!
+
+Date and time: Thu Feb  6 22:53:36 CST 2014
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+Initializing: please wait...
+Initialization complete.  I am ready for commands.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: come here
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: computer
+Instespeak says: What can I do for you?
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: the deal
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: if he
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: lou
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+Welcome to instespeak version 0.01!
+
+Date and time: Thu Feb  6 22:57:16 CST 2014
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+Initializing: please wait...
+Initialization complete.  I am ready for commands.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: computer
+Instespeak says: What can I do for you?
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: you mean how are you
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: good
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: none
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+Welcome to instespeak version 0.01!
+
+Date and time: Thu Feb  6 22:58:46 CST 2014
+The current log level is: 5
+The current project directory is: /mnt/projects/speech/instespeak
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+Initializing: please wait...
+Initialization complete.  I am ready for commands.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: so
+Sending "text:so" to PosTagger.
+Reply from PosTagger: so_RB
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Sending "text:how are you" to PosTagger.
+Reply from PosTagger: how_WRB are_VBP you_PRP
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: auction the key that's why
+Sending "text:auction the key that's why" to PosTagger.
+Reply from PosTagger: auction_NN the_DT key_JJ that's_NNS why_WRB
+I didn't find a match for this noun: auction
+I didn't find a match for this noun: that's
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+Welcome to instespeak version 0.01!
+
+Date and time: Thu Feb  6 23:00:00 CST 2014
+The current log level is: 5
+The current project directory is: /mnt/projects/speech/instespeak
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+Initializing: please wait...
+Initialization complete.  I am ready for commands.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: computer
+Sending "text:computer" to PosTagger.
+Reply from PosTagger: computer_NN
+Instespeak is going to run this module: "greetings" with these arguments: " -m computer"
+Instespeak says: What can I do for you?
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: we
+Sending "text:we" to PosTagger.
+Reply from PosTagger: we_PRP
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Sending "text:how are you" to PosTagger.
+Reply from PosTagger: how_WRB are_VBP you_PRP
+Instespeak says: 
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: our culture
+Sending "text:our culture" to PosTagger.
+Reply from PosTagger: our_PRP$ culture_NN
+I didn't find a match for this noun: culture
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+Welcome to instespeak version 0.01!
+
+Date and time: Thu Feb  6 23:00:59 CST 2014
+The current log level is: 5
+The current project directory is: /mnt/projects/speech/instespeak
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+Initializing: please wait...
+Initialization complete.  I am ready for commands.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: computer
+Sending "text:computer" to PosTagger.
+Reply from PosTagger: computer_NN
+Instespeak is going to run this module: "greetings" with these arguments: " -m computer"
+Instespeak says: What can I do for you?
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: we saw were you
+Sending "text:we saw were you" to PosTagger.
+Reply from PosTagger: we_PRP saw_VBD were_VBD you_PRP
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Sending "text:how are you" to PosTagger.
+Reply from PosTagger: how_WRB are_VBP you_PRP
+what is: ******
+Instespeak says: 
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: there is a car officer of not
+Sending "text:there is a car officer of not" to PosTagger.
+Reply from PosTagger: there_EX is_VBZ a_DT car_NN officer_NN of_IN not_RB
+I didn't find a match for this noun: car
+I didn't find a match for this noun: officer
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+Welcome to instespeak version 0.01!
+
+Date and time: Thu Feb  6 23:02:18 CST 2014
+The current log level is: 5
+The current project directory is: /mnt/projects/speech/instespeak
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+Initializing: please wait...
+Initialization complete.  I am ready for commands.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: but her
+Sending "text:but her" to PosTagger.
+Reply from PosTagger: but_CC her_PRP$
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how real
+Sending "text:how real" to PosTagger.
+Reply from PosTagger: how_WRB real_JJ
+what is: ***word: ******
+pos:  ******
+sub:  *********
+Instespeak says: word: ******
+pos:  ******
+sub:  ******
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Sending "text:how are you" to PosTagger.
+Reply from PosTagger: how_WRB are_VBP you_PRP
+what is: ***word: ******
+pos:  ******
+sub:  *********
+Instespeak says: word: ******
+pos:  ******
+sub:  ******
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+Welcome to instespeak version 0.01!
+
+Date and time: Thu Feb  6 23:04:14 CST 2014
+The current log level is: 5
+The current project directory is: /mnt/projects/speech/instespeak
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+Initializing: please wait...
+Initialization complete.  I am ready for commands.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: come here
+Sending "text:come here" to PosTagger.
+Reply from PosTagger: come_VBN here_RB
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how real
+Sending "text:how real" to PosTagger.
+Reply from PosTagger: how_WRB real_JJ
+what is: ***word: ******
+pos:  ******
+sub:  *********
+Instespeak says: word: ******
+pos:  ******
+sub:  ******
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Sending "text:how are you" to PosTagger.
+Reply from PosTagger: how_WRB are_VBP you_PRP
+what is: ***word: ***how***
+pos:  ***are***
+sub:  ***you***
+I'm ok.  I'm a little stresseded, but nothing I can't handle.***
+Instespeak says: word: ***how***
+pos:  ***are***
+sub:  ***you***
+I'm ok.  I'm a little stresseded, but nothing I can't handle.
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+Welcome to instespeak version 0.01!
+
+Date and time: Thu Feb  6 23:05:21 CST 2014
+The current log level is: 5
+The current project directory is: /mnt/projects/speech/instespeak
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+Initializing: please wait...
+Initialization complete.  I am ready for commands.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: computer
+Sending "text:computer" to PosTagger.
+Reply from PosTagger: computer_NN
+Instespeak is going to run this module: "greetings" with these arguments: " -m computer"
+Instespeak says: What can I do for you?
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Sending "text:how are you" to PosTagger.
+Reply from PosTagger: how_WRB are_VBP you_PRP
+Instespeak says: I'm ok.  I'm a little stresseded, but nothing I can't handle.
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+Welcome to instespeak version 0.01!
+
+Date and time: Thu Feb  6 23:07:23 CST 2014
+The current log level is: 5
+The current project directory is: /mnt/projects/speech/instespeak
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+Initializing: please wait...
+Initialization complete.  I am ready for commands.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: computer
+Sending "text:computer" to PosTagger.
+Reply from PosTagger: computer_NN
+Instespeak is going to run this module: "greetings" with these arguments: " -m computer"
+Instespeak says: What can I do for you?
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Sending "text:how are you" to PosTagger.
+Reply from PosTagger: how_WRB are_VBP you_PRP
+Instespeak says: I am ok.  I am a little stresseded, but nothing I can not handle.
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+Welcome to instespeak version 0.01!
+
+Date and time: Thu Feb  6 23:08:24 CST 2014
+The current log level is: 5
+The current project directory is: /mnt/projects/speech/instespeak
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+Initializing: please wait...
+Initialization complete.  I am ready for commands.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: oh
+Sending "text:oh" to PosTagger.
+Reply from PosTagger: oh_UH
+I didn't find a match for this interjection: oh
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: the air
+Sending "text:the air" to PosTagger.
+Reply from PosTagger: the_DT air_NN
+I didn't find a match for this noun: air
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: don't be a
+Sending "text:don't be a" to PosTagger.
+Reply from PosTagger: don't_RB be_VB a_DT
+Sending string to verb processor
+Instespeak says: 
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Sending "text:how are you" to PosTagger.
+Reply from PosTagger: how_WRB are_VBP you_PRP
+Instespeak says: I am ok.  I am a little stressed, but nothing I can not handle.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: if
+Sending "text:if" to PosTagger.
+Reply from PosTagger: if_IN
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: well really you
+Sending "text:well really you" to PosTagger.
+Reply from PosTagger: well_RB really_RB you_PRP
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: 
+Sending "text:" to PosTagger.
+Reply from PosTagger: Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Sending "text:how are you" to PosTagger.
+Reply from PosTagger: how_WRB are_VBP you_PRP
+Instespeak says: I am ok.  I am a little stressed, but nothing I can not handle.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: and and then
+Sending "text:and and then" to PosTagger.
+Reply from PosTagger: and_CC and_CC then_RB
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: uh
+Sending "text:uh" to PosTagger.
+Reply from PosTagger: uh_UH
+I didn't find a match for this interjection: uh
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: but
+Sending "text:but" to PosTagger.
+Reply from PosTagger: but_CC
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how how he he he uses the in i don't
+Sending "text:how how he he he uses the in i don't" to PosTagger.
+Reply from PosTagger: how_WRB how_WRB he_PRP he_PRP he_PRP uses_VBZ the_DT in_IN i_NN don't_.
+Instespeak says: 
+Instespeak says: 
+I didn't find a match for this noun: i
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: our ear
+Sending "text:our ear" to PosTagger.
+Reply from PosTagger: our_PRP$ ear_NN
+I didn't find a match for this noun: ear
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: our hero
+Sending "text:our hero" to PosTagger.
+Reply from PosTagger: our_PRP$ hero_NN
+I didn't find a match for this noun: hero
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: our hero
+Sending "text:our hero" to PosTagger.
+Reply from PosTagger: our_PRP$ hero_NN
+I didn't find a match for this noun: hero
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you from here
+Sending "text:how are you from here" to PosTagger.
+Reply from PosTagger: how_WRB are_VBP you_PRP from_IN here_RB
+Instespeak says: 
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how earlier
+Sending "text:how earlier" to PosTagger.
+Reply from PosTagger: how_WRB earlier_RBR
+Instespeak says: 
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Sending "text:how are you" to PosTagger.
+Reply from PosTagger: how_WRB are_VBP you_PRP
+Instespeak says: I am ok.  I am a little stressed, but nothing I can not handle.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: he use e.
+Sending "text:he use e." to PosTagger.
+Reply from PosTagger: he_PRP use_VB e._FW
+Sending string to verb processor
+Instespeak says: 
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: two
+Sending "text:two" to PosTagger.
+Reply from PosTagger: two_CD
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: lou
+Sending "text:lou" to PosTagger.
+Reply from PosTagger: lou_NNS
+I didn't find a match for this noun: lou
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: our year
+Sending "text:our year" to PosTagger.
+Reply from PosTagger: our_PRP$ year_NN
+I didn't find a match for this noun: year
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Sending "text:how are you" to PosTagger.
+Reply from PosTagger: how_WRB are_VBP you_PRP
+Instespeak says: I am pissed.  I am stressed.  My circuits are overheating.  Throw me a stick of RAM, will you?
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: and then
+Sending "text:and then" to PosTagger.
+Reply from PosTagger: and_CC then_RB
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: one is the wrong
+Sending "text:one is the wrong" to PosTagger.
+Reply from PosTagger: one_CD is_VBZ the_DT wrong_JJ
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: if
+Sending "text:if" to PosTagger.
+Reply from PosTagger: if_IN
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: all that
+Sending "text:all that" to PosTagger.
+Reply from PosTagger: all_PDT that_WDT
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: you all a sure
+Sending "text:you all a sure" to PosTagger.
+Reply from PosTagger: you_PRP all_DT a_DT sure_JJ
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: no talks on
+Sending "text:no talks on" to PosTagger.
+Reply from PosTagger: no_DT talks_NNS on_IN
+I didn't find a match for this noun: talks
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: and they the attack or the a while to where off
+Sending "text:and they the attack or the a while to where off" to PosTagger.
+Reply from PosTagger: and_CC they_PRP the_DT attack_NN or_CC the_DT a_DT while_NN to_TO where_WRB off_IN
+I didn't find a match for this noun: attack
+I didn't find a match for this noun: while
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Sending "text:how are you" to PosTagger.
+Reply from PosTagger: how_WRB are_VBP you_PRP
+Instespeak says: I am pissed.  I am stressed.  My circuits are overheating.  Throw me a stick of RAM, will you?
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: he knew me and to me to at own from whom he is that head and win
+Sending "text:he knew me and to me to at own from whom he is that head and win" to PosTagger.
+Reply from PosTagger: he_PRP knew_VBD me_PRP and_CC to_TO me_PRP to_TO at_IN own_JJ from_IN whom_WP he_PRP is_VBZ that_IN head_NN and_CC win_VB
+I didn't find a match for this noun: head
+Sending string to verb processor
+Instespeak says: 
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: all are all over who often
+Sending "text:all are all over who often" to PosTagger.
+Reply from PosTagger: all_DT are_VBP all_DT over_IN who_WP often_RB
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: uh huh
+Sending "text:uh huh" to PosTagger.
+Reply from PosTagger: uh_UH huh_UH
+I didn't find a match for this interjection: uh
+I didn't find a match for this interjection: huh
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: or what it a in a moment here the rule
+Sending "text:or what it a in a moment here the rule" to PosTagger.
+Reply from PosTagger: or_CC what_WP it_PRP a_DT in_RP a_DT moment_NN here_RB the_DT rule_NN
+I didn't find a match for this noun: moment
+I didn't find a match for this noun: rule
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: back
+Sending "text:back" to PosTagger.
+Reply from PosTagger: back_RB
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: good to
+Sending "text:good to" to PosTagger.
+Reply from PosTagger: good_JJ to_TO
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: the home and he has
+Sending "text:the home and he has" to PosTagger.
+Reply from PosTagger: the_DT home_NN and_CC he_PRP has_VBZ
+I didn't find a match for this noun: home
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: all we should as small as the v. it could is it you from the lot
+Sending "text:all we should as small as the v. it could is it you from the lot" to PosTagger.
+Reply from PosTagger: all_DT we_PRP should_MD as_RB small_JJ as_IN the_DT v._CC it_PRP could_MD is_VBZ it_PRP you_PRP from_IN the_DT lot_NN
+I didn't find a match for this noun: lot
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: i got are off of
+Sending "text:i got are off of" to PosTagger.
+Reply from PosTagger: i_FW got_VBD are_VBP off_RB of_IN
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: is the
+Sending "text:is the" to PosTagger.
+Reply from PosTagger: is_VBZ the_DT
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: uh huh
+Sending "text:uh huh" to PosTagger.
+Reply from PosTagger: uh_UH huh_UH
+I didn't find a match for this interjection: uh
+I didn't find a match for this interjection: huh
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: all role all that
+Sending "text:all role all that" to PosTagger.
+Reply from PosTagger: all_DT role_NN all_RB that_IN
+I didn't find a match for this noun: role
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: that is the
+Sending "text:that is the" to PosTagger.
+Reply from PosTagger: that_WDT is_VBZ the_DT
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: huh huh
+Sending "text:huh huh" to PosTagger.
+Reply from PosTagger: huh_JJ huh_JJ
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: if
+Sending "text:if" to PosTagger.
+Reply from PosTagger: if_IN
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: we're going to
+Sending "text:we're going to" to PosTagger.
+Reply from PosTagger: we're_NN going_VBG to_TO
+I didn't find a match for this noun: we're
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: well
+Sending "text:well" to PosTagger.
+Reply from PosTagger: well_RB
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: and that non not been the two
+Sending "text:and that non not been the two" to PosTagger.
+Reply from PosTagger: and_CC that_DT non_NN not_RB been_VBN the_DT two_CD
+I didn't find a match for this noun: non
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Sending "text:how are you" to PosTagger.
+Reply from PosTagger: how_WRB are_VBP you_PRP
+Instespeak says: I am pissed.  I am stressed.  My circuits are overheating.  Throw me a stick of RAM, will you?
+The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men.  Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children.  And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers.  And you will know My name is the Lord when I lay My vengance upon thee.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Sending "text:how are you" to PosTagger.
+Reply from PosTagger: how_WRB are_VBP you_PRP
+Instespeak says: I am pissed.  I am stressed.  My circuits are overheating.  Throw me a stick of RAM, will you?
+The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men.  Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children.  And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers.  And you will know My name is the Lord when I lay My vengance upon thee.
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+Welcome to instespeak version 0.01!
+
+Date and time: Thu Feb  6 23:37:40 CST 2014
+The current log level is: 5
+The current project directory is: /mnt/projects/speech/instespeak
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+Initializing: please wait...
+Initialization complete.  I am ready for commands.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: computer
+Sending "text:computer" to PosTagger.
+Reply from PosTagger: computer_NN
+Instespeak is going to run this module: "greetings" with these arguments: " -m computer"
+Instespeak says: What can I do for you?
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: do
+Sending "text:do" to PosTagger.
+Reply from PosTagger: do_VB
+Sending string to verb processor
+Instespeak says: 
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Sending "text:how are you" to PosTagger.
+Reply from PosTagger: how_WRB are_VBP you_PRP
+Instespeak says: I am pissed.  I am stressed.  My circuits are overheating.  Throw me a stick of RAM, will you?
+The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men.  Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brothers keeper and the finder of lost children.  And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers.  And you will know My name is the Lord when I lay My vengance upon thee.
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+Welcome to instespeak version 0.01!
+
+Date and time: Thu Feb  6 23:42:33 CST 2014
+The current log level is: 5
+The current project directory is: /mnt/projects/speech/instespeak
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+Initializing: please wait...
+Initialization complete.  I am ready for commands.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: that is
+Sending "text:that is" to PosTagger.
+Reply from PosTagger: that_DT is_VBZ
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: our york
+Sending "text:our york" to PosTagger.
+Reply from PosTagger: our_PRP$ york_NN
+I didn't find a match for this noun: york
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Sending "text:how are you" to PosTagger.
+Reply from PosTagger: how_WRB are_VBP you_PRP
+Instespeak says: The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men.  Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brothers keeper and the finder of lost children.  And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers.  And you will know My name is the Lord when I lay My vengance upon thee.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: and and then you all i want it done a the one is to the moving
+Sending "text:and and then you all i want it done a the one is to the moving" to PosTagger.
+Reply from PosTagger: and_CC and_CC then_RB you_PRP all_DT i_FW want_VBP it_PRP done_VBN a_DT the_DT one_NN is_VBZ to_TO the_DT moving_VBG
+I didn't find a match for this noun: one
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: and he can do
+Sending "text:and he can do" to PosTagger.
+Reply from PosTagger: and_CC he_PRP can_MD do_VB
+Sending string to verb processor
+Instespeak says: 
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: yeah just an
+Sending "text:yeah just an" to PosTagger.
+Reply from PosTagger: yeah_UH just_RB an_DT
+I didn't find a match for this interjection: yeah
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: they get an you say a line on the to let to the let down on the on like had a my mind
+Sending "text:they get an you say a line on the to let to the let down on the on like had a my mind" to PosTagger.
+Reply from PosTagger: they_PRP get_VBP an_DT you_PRP say_VBP a_DT line_NN on_IN the_DT to_TO let_VB to_TO the_DT let_VB down_RP on_IN the_DT on_RP like_IN had_VBD a_DT my_PRP$ mind_NN
+I didn't find a match for this noun: line
+Sending string to verb processor
+Instespeak says: 
+Sending string to verb processor
+Instespeak says: 
+I didn't find a match for this noun: mind
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Sending "text:how are you" to PosTagger.
+Reply from PosTagger: how_WRB are_VBP you_PRP
+Instespeak says: The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men.  Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brothers keeper and the finder of lost children.  And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers.  And you will know My name is the Lord when I lay My vengance upon thee.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: it
+Sending "text:it" to PosTagger.
+Reply from PosTagger: it_PRP
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: computer
+Sending "text:computer" to PosTagger.
+Reply from PosTagger: computer_NN
+Instespeak is going to run this module: "greetings" with these arguments: " -m computer"
+Instespeak says: What can I do for you?
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: computer
+Sending "text:computer" to PosTagger.
+Reply from PosTagger: computer_NN
+Instespeak is going to run this module: "greetings" with these arguments: " -m computer"
+Instespeak says: What can I do for you?
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: but you the the that how i was on in as you at she is the any even the losing n. the loss and he was a few to use gotten the a p. e. to e. the of a lot to find out on the you think a out and to have one who that a one is through are a lot to lose the u. were down on and and i was a lot and i was to important
+Sending "text:but you the the that how i was on in as you at she is the any even the losing n. the loss and he was a few to use gotten the a p. e. to e. the of a lot to find out on the you think a out and to have one who that a one is through are a lot to lose the u. were down on and and i was a lot and i was to important" to PosTagger.
+Reply from PosTagger: but_CC you_PRP the_DT the_DT that_WDT how_WRB i_PRP was_VBD on_RB in_IN as_IN you_PRP at_IN she_PRP is_VBZ the_DT any_RB even_RB the_DT losing_VBG n._NN the_DT loss_NN and_CC he_PRP was_VBD a_DT few_JJ to_TO use_VB gotten_VBN the_DT a_DT p._NN e._NN to_TO e._VB the_DT of_IN a_DT lot_NN to_TO find_VB out_RP on_IN the_DT you_PRP think_VBP a_DT out_RB and_CC to_TO have_VB one_NN who_WP that_IN a_DT one_NN is_VBZ through_RB are_VBP a_DT lot_NN to_TO lose_VB the_DT u._NN were_VBD down_RB on_IN and_CC and_CC i_NN was_VBD a_DT lot_NN and_CC i_NN was_VBD to_TO important_JJ
+Instespeak says: 
+I didn't find a match for this noun: n.
+I didn't find a match for this noun: loss
+Sending string to verb processor
+Instespeak says: 
+I didn't find a match for this noun: p.
+I didn't find a match for this noun: e.
+Sending string to verb processor
+Instespeak says: 
+I didn't find a match for this noun: lot
+Sending string to verb processor
+Instespeak says: 
+Sending string to verb processor
+Instespeak says: 
+I didn't find a match for this noun: one
+I didn't find a match for this noun: one
+I didn't find a match for this noun: lot
+Sending string to verb processor
+Instespeak says: 
+I didn't find a match for this noun: u.
+I didn't find a match for this noun: i
+I didn't find a match for this noun: lot
+I didn't find a match for this noun: i
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: bill
+Sending "text:bill" to PosTagger.
+Reply from PosTagger: bill_NN
+I didn't find a match for this noun: bill
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: if
+Sending "text:if" to PosTagger.
+Reply from PosTagger: if_IN
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how how
+Sending "text:how how" to PosTagger.
+Reply from PosTagger: how_WRB how_WRB
+Instespeak says: 
+Instespeak says: 
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Sending "text:how are you" to PosTagger.
+Reply from PosTagger: how_WRB are_VBP you_PRP
+Instespeak says: The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men.  Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brothers keeper and the finder of lost children.  And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers.  And you will know My name is the Lord when I lay My vengance upon thee.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: no
+Sending "text:no" to PosTagger.
+Reply from PosTagger: no_UH
+I didn't find a match for this interjection: no
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: at un
+Sending "text:at un" to PosTagger.
+Reply from PosTagger: at_IN un_NN
+I didn't find a match for this noun: un
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: so they was and
+Sending "text:so they was and" to PosTagger.
+Reply from PosTagger: so_IN they_PRP was_VBD and_CC
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: i'm going
+Sending "text:i'm going" to PosTagger.
+Reply from PosTagger: i'm_NN going_VBG
+I didn't find a match for this noun: i'm
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Sending "text:how are you" to PosTagger.
+Reply from PosTagger: how_WRB are_VBP you_PRP
+Instespeak says: I am pissed.  I am stressed.  My circuits are overheating.  Throw me a stick of RAM, will you?
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: i am a way that
+Sending "text:i am a way that" to PosTagger.
+Reply from PosTagger: i_PRP am_VBP a_DT way_NN that_WDT
+I didn't find a match for this noun: way
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: in this
+Sending "text:in this" to PosTagger.
+Reply from PosTagger: in_IN this_DT
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: temperature
+Sending "text:temperature" to PosTagger.
+Reply from PosTagger: temperature_NN
+Instespeak is going to run this module: "get_weather" with these arguments: "-t -m temperature"
+Instespeak says: The current temperature is negative 2 degrees and the windchill is negative 13 degrees.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: that means
+Sending "text:that means" to PosTagger.
+Reply from PosTagger: that_DT means_NNS
+I didn't find a match for this noun: means
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: is that and
+Sending "text:is that and" to PosTagger.
+Reply from PosTagger: is_VBZ that_IN and_CC
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: once it live there are
+Sending "text:once it live there are" to PosTagger.
+Reply from PosTagger: once_RB it_PRP live_VBP there_RB are_VBP
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: what our
+Sending "text:what our" to PosTagger.
+Reply from PosTagger: what_WP our_PRP$
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: one is the weather like
+Sending "text:one is the weather like" to PosTagger.
+Reply from PosTagger: one_CD is_VBZ the_DT weather_NN like_IN
+Instespeak is going to run this module: "get_weather" with these arguments: " -m one is the weather like"
+Instespeak says: The current skys are mostly clear with a temperature of negative 2.0 degrees and a windchill of negative 13 degrees.
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+Welcome to instespeak version 0.01!
+
+Date and time: Thu Feb  6 23:51:33 CST 2014
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+Initializing: please wait...
+Initialization complete.  I am ready for commands.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: come here
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: and you know
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: computer
+Instespeak says: What can I do for you?
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: how are you
+Instespeak says: I am working hard here, some more resources would be nice.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Phrase detected: sorry
+Instespeak says: Sorry I have nothing to say.
+----------------------------------------------------------------------------------------------------
+
