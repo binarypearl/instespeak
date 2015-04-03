@@ -1,4 +1,4 @@
-Instespeak in high level speech processor.  It functions like Siri.  You speak a command, and instespeak will do something with that command and speak feedback to you.
+Instespeak is a high level speech processor.  It functions like Siri.  You speak a command, and instespeak will do something with that command and speak feedback to you.
 
 For example:
 [You] What is the temperature?
