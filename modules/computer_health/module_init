@@ -1,0 +1,30 @@
+#!/usr/bin/perl
+
+# Place the name of the script or program that you would this module to run.  Make sure to include
+# the $* at the end so all arguments are passed to it.
+
+use strict;
+
+my @records = ();
+my $record = "";
+
+my $project_directory = "";
+
+my $output = "";
+
+open (CFGFILE, "/etc/instespeak.cfg");
+
+@records = <CFGFILE>;
+
+foreach $record (@records) {
+	chomp ($record);
+
+	if ($record =~ m/(project_directory)(\s*)(=)(\s*)(.*)/) {
+		$project_directory = $5;
+		chomp ($project_directory);
+	}
+}
+
+$output = `$project_directory/modules/computer_health/computer_health.py \$*`;
+
+print "$output";
